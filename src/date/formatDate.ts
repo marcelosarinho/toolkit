@@ -49,17 +49,3 @@ export default function formatDate(date: Date,
     return iso.replace(C.REGEX_ISO_DATE, '$2/$3/$1');
   }
 }
-
-const a = formatDate(new Date('02/25/2025 18:30'), "dd/MM/YYYY HH:mm:ss");
-const b = formatDate(new Date('12/25/222222 18:30'), "dd/MM/YYYY HH:mm:ss");
-const c = formatDate(new Date('12/25/222222 18:30'), "dd/MM/YYYY HH:mm:ss");
-const d = formatDate(new Date('12/25/222222 18:30'), "dd/MM/YYYY HH:mm:ss");
-const e = formatDate(new Date('12/25/222222 18:30'), "dd/MM/YYYY HH:mm:ss");
-const f = formatDate(new Date('12/25/222222 18:30'), "dd/MM/YYYY HH:mm:ss");
-
-console.log(a);
-console.log(b);
-console.log(c);
-console.log(d);
-console.log(e);
-console.log(f);
