@@ -1,0 +1,1 @@
+A TypeScript library for arrays, date manipulation, strings, objects, and others. Bundled with tsup.
