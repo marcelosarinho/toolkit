@@ -41,6 +41,18 @@ describe('formatDate', () => {
     expect(formatDate(testDate6Digit, 'usDate')).toBe('12/25/222222');
   });
 
+  it('should format "HH:mm"', () => {
+    expect(formatDate(testDate, 'time')).toBe('14:30');
+    expect(formatDate(testDate5Digit, 'time')).toBe('14:30');
+    expect(formatDate(testDate6Digit, 'time')).toBe('18:30');
+  });
+
+  it('should format "HH:mm:ss"', () => {
+    expect(formatDate(testDate, 'fulltime')).toBe('14:30:45');
+    expect(formatDate(testDate5Digit, 'fulltime')).toBe('14:30:45');
+    expect(formatDate(testDate6Digit, 'fulltime')).toBe('18:30:45');
+  });
+
   it('should return undefined and log on invalid date', () => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
     const invalidDate = new Date('invalid');

@@ -1,6 +1,6 @@
 import * as C from "./constants";
 
-type DateFormat = 'shortDate' | 'shortDateTime' | 'fullDateTime' | 'isoDate' | 'isoDateTime' | 'usDate';
+type DateFormat = 'shortDate' | 'shortDateTime' | 'fullDateTime' | 'isoDate' | 'isoDateTime' | 'usDate' | 'time' | 'fulltime';
 
 const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
   shortDate: iso => iso.replace(C.REGEX_ISO_DATE, '$3/$2/$1'),
@@ -9,6 +9,8 @@ const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
   isoDate: iso => iso.replace(C.REGEX_ISO_DATE, '$1-$2-$3'),
   isoDateTime: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM, '$1-$2-$3 $4:$5'),
   usDate: iso => iso.replace(C.REGEX_ISO_DATE, '$2/$3/$1'),
+  time: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM, '$4:$5'),
+  fulltime: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM_SS, '$4:$5:$6'),
 }
 
 /**
