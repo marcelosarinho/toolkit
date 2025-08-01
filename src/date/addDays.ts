@@ -1,8 +1,9 @@
 import * as C from "./constants";
+import { validateDate } from "./validate";
 
 export default function addDays(date: Date, days: number) {
-  if (date.toString() === C.INVALID_DATE_STRING) {
-    console.log('Invalid date!');
+  if (!validateDate(date)) {
+    console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
 

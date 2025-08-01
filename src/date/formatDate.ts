@@ -1,4 +1,5 @@
 import * as C from "./constants";
+import { validateDate } from "./validate";
 
 type DateFormat = 'shortDate' | 'shortDateTime' | 'fullDateTime' | 'isoDate' | 'isoDateTime' | 'usDate' | 'time' | 'fulltime';
 
@@ -20,8 +21,8 @@ const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
  * @returns {string} The formatted date
  */
 export default function formatDate(date: Date, format: DateFormat) {
-  if (date.toString() === C.INVALID_DATE_STRING) {
-    console.log('Invalid date!');
+  if (!validateDate(date)) {
+    console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
 
