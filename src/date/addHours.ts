@@ -1,4 +1,4 @@
-import { isValidDate } from "./validate";
+import { isInteger, isLessThanOne, isValidDate } from "./validate";
 
 /**
  * 
@@ -12,12 +12,12 @@ export default function addHours(date: Date, hours: number) {
     return;
   }
 
-  if (hours < 1) {
+  if (isLessThanOne(hours)) {
     console.log('The hours parameter must be greater or equal than 1!');
     return;
   }
 
-  if (!Number.isInteger(hours)) {
+  if (!isInteger(hours)) {
     console.log('The hours parameter must be an integer!');
     return;
   }
