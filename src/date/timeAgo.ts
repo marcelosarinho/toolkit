@@ -1,9 +1,9 @@
 import { validateDate } from "./validate";
 
 /**
- * 
- * @param {Date} date The date which will be compared to today's date.
- * @returns {string | undefined} A string informing the passed time, or undefined if the input is invalid.
+ * Gets the time elapsed since the given date
+ * @param {Date} date - The date to compare with the current date.
+ * @returns {string | undefined} A human-readable string representing the time elapsed since the given date, or undefined if the input is invalid.
  */
 export default function timeAgo(date: Date): string | undefined {
   if (!validateDate(date)) {
