@@ -1,4 +1,4 @@
-import { isGreaterThanOne, isInteger, isValidDate } from "./validate";
+import { isLessThanOne, isInteger, isValidDate } from "./validate";
 
 /**
  * Add days to a specific date
@@ -12,7 +12,7 @@ export default function addDays(date: Date, days: number): string | undefined {
     return;
   }
 
-  if (isGreaterThanOne(days)) {
+  if (isLessThanOne(days)) {
     console.log('The days parameter must be greater or equal than 1!');
     return;
   }

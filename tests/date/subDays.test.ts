@@ -51,4 +51,4 @@ describe('subDays', () => {
     const result = subDays(date, 1);
     expect(result).toBe(expected);
   });
-})
+});

@@ -1,4 +1,4 @@
-import { isGreaterThanOne, isInteger, isValidDate } from "./validate";
+import { isLessThanOne, isInteger, isValidDate } from "./validate";
 
 /**
  * Subtract days from a specific date
@@ -6,13 +6,13 @@ import { isGreaterThanOne, isInteger, isValidDate } from "./validate";
  * @param {number} days - The number of days to subtract to the given date.
  * @returns {string | undefined} The resulting date as an ISO string, or undefined if the input is invalid.
  */
-export default function subDays(date: Date, days: number) {
+export default function subDays(date: Date, days: number): string | undefined {
   if (!isValidDate(date)) {
     console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
 
-  if (isGreaterThanOne(days)) {
+  if (isLessThanOne(days)) {
     console.log('The days parameter must be greater or equal than 1!');
     return;
   }
