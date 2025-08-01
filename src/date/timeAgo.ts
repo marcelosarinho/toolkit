@@ -1,4 +1,4 @@
-import { validateDate } from "./validate";
+import { isValidDate } from "./validate";
 
 /**
  * Gets the time elapsed since the given date
@@ -6,7 +6,7 @@ import { validateDate } from "./validate";
  * @returns {string | undefined} A human-readable string representing the time elapsed since the given date, or undefined if the input is invalid.
  */
 export default function timeAgo(date: Date): string | undefined {
-  if (!validateDate(date)) {
+  if (!isValidDate(date)) {
     console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }

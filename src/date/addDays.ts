@@ -1,4 +1,4 @@
-import { validateDate } from "./validate";
+import { isValidDate } from "./validate";
 
 /**
  * Add days to an specific date
@@ -7,7 +7,7 @@ import { validateDate } from "./validate";
  * @returns {string | undefined} The resulting date as an ISO string, or undefined if the input is invalid.
  */
 export default function addDays(date: Date, days: number): string | undefined {
-  if (!validateDate(date)) {
+  if (!isValidDate(date)) {
     console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
@@ -28,3 +28,6 @@ export default function addDays(date: Date, days: number): string | undefined {
 
   return new Date(result).toISOString()
 }
+const date = new Date('2025-01-01T00:00:00.000Z');
+
+console.log(addDays(date, 5));

@@ -1,5 +1,5 @@
 import * as C from "./constants";
 
-export function validateDate(date: Date) {
-  return date.toISOString() === C.INVALID_DATE_STRING;
+export function isValidDate(date: Date) {
+  return !(date.toString() === C.INVALID_DATE_STRING);
 }

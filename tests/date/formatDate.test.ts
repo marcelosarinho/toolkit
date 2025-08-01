@@ -60,7 +60,7 @@ describe('formatDate', () => {
     const result = formatDate(invalidDate, 'shortDate');
 
     expect(result).toBeUndefined();
-    expect(consoleSpy).toHaveBeenCalledWith('Invalid date!');
+    expect(consoleSpy).toHaveBeenCalledWith('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     consoleSpy.mockRestore();
   });
 });

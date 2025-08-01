@@ -1,17 +1,17 @@
 import * as C from "./constants";
-import { validateDate } from "./validate";
+import { isValidDate } from "./validate";
 
 type DateFormat = 'shortDate' | 'shortDateTime' | 'fullDateTime' | 'isoDate' | 'isoDateTime' | 'usDate' | 'time' | 'fulltime';
 
 const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
   shortDate: iso => iso.replace(C.REGEX_ISO_DATE, '$3/$2/$1'),
-  shortDateTime: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM, '$3/$2/$1 $4:$5'),
-  fullDateTime: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM_SS, '$3/$2/$1 $4:$5:$6'),
+  shortDateTime: iso => iso.replace(C.REGEX_ISO_DATE, '$3/$2/$1 $4:$5'),
+  fullDateTime: iso => iso.replace(C.REGEX_ISO_DATE, '$3/$2/$1 $4:$5:$6'),
   isoDate: iso => iso.replace(C.REGEX_ISO_DATE, '$1-$2-$3'),
-  isoDateTime: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM, '$1-$2-$3 $4:$5'),
+  isoDateTime: iso => iso.replace(C.REGEX_ISO_DATE, '$1-$2-$3 $4:$5'),
   usDate: iso => iso.replace(C.REGEX_ISO_DATE, '$2/$3/$1'),
-  time: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM, '$4:$5'),
-  fulltime: iso => iso.replace(C.REGEX_ISO_DATETIME_HH_MM_SS, '$4:$5:$6'),
+  time: iso => iso.replace(C.REGEX_ISO_DATE, '$4:$5'),
+  fulltime: iso => iso.replace(C.REGEX_ISO_DATE, '$4:$5:$6'),
 }
 
 /**
@@ -21,7 +21,7 @@ const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
  * @returns {string | undefined} The formatted date, or undefined if the input is invalid.
  */
 export default function formatDate(date: Date, format: DateFormat): string | undefined {
-  if (!validateDate(date)) {
+  if (!isValidDate(date)) {
     console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
