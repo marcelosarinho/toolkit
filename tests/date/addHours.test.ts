@@ -1,7 +1,7 @@
-import addDays from "../../src/date/addDays";
-import * as C from '../../src/date/constants';
+import addHours from "../../src/date/addHours";
+import * as C from "../../src/date/constants";
 
-describe('addDays', () => {
+describe('addHours', () => {
   const originalConsoleLog = console.log;
   let logSpy: jest.SpyInstance;
 
@@ -17,38 +17,38 @@ describe('addDays', () => {
     const invalidDate = new Date('invalid-date');
     expect(invalidDate.toString()).toBe(C.INVALID_DATE_STRING);
 
-    const result = addDays(invalidDate, 5);
+    const result = addHours(invalidDate, 5);
     expect(result).toBeUndefined();
     expect(logSpy).toHaveBeenCalledWith('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
   });
 
-  it('should log error if days is negative', () => {
+  it('should log error if hours is negative', () => {
     const date = new Date('2025-01-01');
-    const result = addDays(date, -2);
+    const result = addHours(date, -2);
     expect(result).toBeUndefined();
-    expect(logSpy).toHaveBeenCalledWith('The days parameter must be greater or equal than 1!');
+    expect(logSpy).toHaveBeenCalledWith('The hours parameter must be greater or equal than 1!');
   });
 
-  it('should log error if days is a float', () => {
+  it('should log error if hours is a float', () => {
     const date = new Date('2025-01-01');
-    const result = addDays(date, 2.5);
+    const result = addHours(date, 2.5);
     expect(result).toBeUndefined();
-    expect(logSpy).toHaveBeenCalledWith('The days parameter must be an integer!');
-  });
+    expect(logSpy).toHaveBeenCalledWith('The hours parameter must be an integer!');
+  })
 
   it('should return correct ISO date if valid input is given', () => {
     const date = new Date('2025-01-01T00:00:00.000Z');
-    const expected = new Date('2025-01-06T00:00:00.000Z').toISOString();
+    const expected = new Date('2025-01-01T05:00:00.000Z').toISOString();
 
-    const result = addDays(date, 5);
+    const result = addHours(date, 5);
     expect(result).toBe(expected);
-  });
+  })
 
-  it('should add 1 day correctly', () => {
+  it('should add 1 hour correctly', () => {
     const date = new Date('2025-12-30T00:00:00.000Z');
-    const expected = new Date('2025-12-31T00:00:00.000Z').toISOString();
+    const expected = new Date('2025-12-30T01:00:00.000Z').toISOString();
 
-    const result = addDays(date, 1);
+    const result = addHours(date, 1);
     expect(result).toBe(expected);
-  });
-});
+  })
+})

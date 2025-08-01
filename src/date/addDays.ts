@@ -22,12 +22,9 @@ export default function addDays(date: Date, days: number): string | undefined {
     return;
   } 
 
-  const daysInMs = days * 86400 * 1000;
+  const daysInMs = days * 60 * 60 * 24 * 1000;
   const dateInMs = date.getTime();
   const result = dateInMs + daysInMs;
 
   return new Date(result).toISOString()
 }
-const date = new Date('2025-01-01T00:00:00.000Z');
-
-console.log(addDays(date, 5));
