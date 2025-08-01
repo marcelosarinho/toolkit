@@ -1,7 +1,11 @@
-import * as C from "./constants";
 import { validateDate } from "./validate";
 
-export default function timeAgo(date: Date) {
+/**
+ * 
+ * @param {Date} date The date which will be compared to today's date.
+ * @returns {string | undefined} A string informing the passed time, or undefined if the input is invalid.
+ */
+export default function timeAgo(date: Date): string | undefined {
   if (!validateDate(date)) {
     console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;

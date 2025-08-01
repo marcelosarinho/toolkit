@@ -16,11 +16,11 @@ const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
 
 /**
  * Formats a given date according to the desired format
- * @param {Date} date - The date to be formatted
- * @param {string} format - The desired format
- * @returns {string} The formatted date
+ * @param {Date} date The date to be formatted.
+ * @param {string} format The desired format.
+ * @returns {string | undefined} The formatted date, or undefined if the input is invalid.
  */
-export default function formatDate(date: Date, format: DateFormat) {
+export default function formatDate(date: Date, format: DateFormat): string | undefined {
   if (!validateDate(date)) {
     console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
