@@ -8,6 +8,6 @@ export function isInteger(number: number) {
   return Number.isInteger(number);
 }
 
-export function isLessThanOne(number: number) {
+export function isGreaterThanOne(number: number) {
   return number < 1
 }

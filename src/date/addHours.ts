@@ -1,7 +1,7 @@
-import { isInteger, isLessThanOne, isValidDate } from "./validate";
+import { isGreaterThanOne, isInteger, isValidDate } from "./validate";
 
 /**
- * 
+ * Add hours to a specific date
  * @param {Date} date - The original date to which hours will be added.
  * @param {number} hours - The number of hours to add to the given date.
  * @returns {string | undefined} The resulting date as an ISO string, or undefined if the input is invalid.
@@ -12,7 +12,7 @@ export default function addHours(date: Date, hours: number) {
     return;
   }
 
-  if (isLessThanOne(hours)) {
+  if (isGreaterThanOne(hours)) {
     console.log('The hours parameter must be greater or equal than 1!');
     return;
   }
