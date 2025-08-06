@@ -21,7 +21,5 @@ export default function getAge(birthdate: Date): number | undefined {
   const result = new Date().getTime() - birthdateInMs;
   const resultDate = new Date(result);
 
-  console.log(resultDate);
-
   return resultDate.getFullYear() - 1970;
 }
