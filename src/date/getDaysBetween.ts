@@ -9,21 +9,17 @@ import { isValidDate } from "./validate";
  */
 export default function getDaysBetween(date1: Date, date2: Date): number | undefined {
   if (!isValidDate(date1)) {
-    console.log(`Date ${date1} is invalid! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD`);
+    console.log('The first date is invalid! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
 
   if (!isValidDate(date2)) {
-    console.log(`Date ${date2} is invalid! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD`);
+    console.log('The second date is invalid! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
     return;
   }
 
   date1 = toMidnightUTC(date1);
   date2 = toMidnightUTC(date2);
   const result = Math.abs(date1.getTime() - date2.getTime());
-  const days = result / 60 / 60 / 24 / 1000;
-
-  return days;
+  return result / 60 / 60 / 24 / 1000;
 }
-
-console.log(getDaysBetween(new Date(), new Date('2025-08-06')));
