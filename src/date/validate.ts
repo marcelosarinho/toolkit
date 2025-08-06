@@ -35,11 +35,7 @@ export function isToday(date: Date): boolean | undefined {
 }
 
 export function isPast(date: Date): boolean {
-  if (date < new Date()) {
-    return true;
-  }
-
-  return false;
+  return date < new Date();
 }
 
 export function isFuture(date: Date): boolean {
