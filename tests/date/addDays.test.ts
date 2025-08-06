@@ -2,8 +2,7 @@ import addDays from "../../src/date/addDays";
 import * as C from '../../src/date/constants';
 
 describe('addDays', () => {
-  const originalConsoleLog = console.log;
-  let logSpy: jest.SpyInstance;
+  let logSpy: jest.Spied<typeof console.log>;
 
   beforeEach(() => {
     logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
