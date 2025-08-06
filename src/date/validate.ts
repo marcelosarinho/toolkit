@@ -14,11 +14,7 @@ export function isLessThanOne(number: number): boolean {
 }
 
 export function isWeekend(date: Date): boolean {
-  if (date.getDay() === 0 || date.getDay() === 6) {
-    return true;
-  }
-
-  return false;
+  return (date.getDay() === 0 || date.getDay() === 6);
 }
 
 export function isToday(date: Date): boolean | undefined {
