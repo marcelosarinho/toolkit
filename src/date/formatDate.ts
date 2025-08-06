@@ -22,7 +22,7 @@ const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
  */
 export default function formatDate(date: Date, format: DateFormat): string | undefined {
   if (!isValidDate(date)) {
-    console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
+    console.log(C.INVALID_DATE_STRING_MESSAGE);
     return;
   }
 

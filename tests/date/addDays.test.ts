@@ -19,7 +19,7 @@ describe('addDays', () => {
 
     const result = addDays(invalidDate, 5);
     expect(result).toBeUndefined();
-    expect(logSpy).toHaveBeenCalledWith('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
+    expect(logSpy).toHaveBeenCalledWith(C.INVALID_DATE_STRING_MESSAGE);
   });
 
   it('should log error if days is negative', () => {

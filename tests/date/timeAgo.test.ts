@@ -58,7 +58,7 @@ describe('timeAgo', () => {
     const invalidDate = new Date(C.INVALID_DATE_STRING);
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
     expect(timeAgo(invalidDate)).toBeUndefined();
-    expect(consoleSpy).toHaveBeenCalledWith('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
+    expect(consoleSpy).toHaveBeenCalledWith(C.INVALID_DATE_STRING_MESSAGE);
     consoleSpy.mockRestore();
   });
 });

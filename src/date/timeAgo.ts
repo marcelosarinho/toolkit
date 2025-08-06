@@ -1,3 +1,4 @@
+import * as C from "./constants";
 import { isValidDate } from "./validate";
 
 /**
@@ -7,7 +8,7 @@ import { isValidDate } from "./validate";
  */
 export default function timeAgo(date: Date): string | undefined {
   if (!isValidDate(date)) {
-    console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
+    console.log(C.INVALID_DATE_STRING_MESSAGE);
     return;
   }
 

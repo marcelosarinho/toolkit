@@ -1,3 +1,4 @@
+import * as C from "./constants";
 import { isLessThanOne, isInteger, isValidDate } from "./validate";
 
 /**
@@ -8,7 +9,7 @@ import { isLessThanOne, isInteger, isValidDate } from "./validate";
  */
 export default function subHours(date: Date, hours: number): string | undefined {
   if (!isValidDate(date)) {
-    console.log('Invalid date! Please provide a date in these formats: YYYY-MM-DDTHH:mm:ss.sssZ, YYYY, YYYY-MM, YYYY-MM-DD');
+    console.log(C.INVALID_DATE_STRING_MESSAGE);
     return;
   }
 
