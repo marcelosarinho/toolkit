@@ -11,3 +11,11 @@ export function isInteger(number: number) {
 export function isLessThanOne(number: number) {
   return number < 1
 }
+
+export function isWeekend(date: Date) {
+  if (date.getDay() === 0 || date.getDay() === 6) {
+    return true;
+  }
+
+  return false;
+}
