@@ -16,8 +16,8 @@ const FORMATTERS: Record<DateFormat, (iso: string) => string> = {
 
 /**
  * Formats a given date according to the desired format
- * @param {Date} date The date to be formatted.
- * @param {string} format The desired format.
+ * @param {Date} date - The date to be formatted.
+ * @param {string} format - The desired format.
  * @returns {string | undefined} The formatted date, or undefined if the input is invalid.
  */
 export default function formatDate(date: Date, format: DateFormat): string | undefined {
