@@ -20,8 +20,16 @@ export function isWeekend(date: Date): boolean {
   return false;
 }
 
-export function isPast(date: Date) {
+export function isPast(date: Date): boolean {
   if (date < new Date()) {
+    return true;
+  }
+
+  return false;
+}
+
+export function isFuture(date: Date): boolean {
+  if (date > new Date()) {
     return true;
   }
 
