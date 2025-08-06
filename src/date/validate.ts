@@ -17,6 +17,10 @@ export function isWeekend(date: Date): boolean {
   return (date.getDay() === 0 || date.getDay() === 6);
 }
 
+export function isWeekday(date: Date): boolean {
+  return (date.getDay() !== 0 && date.getDay() !== 6);
+}
+
 export function isToday(date: Date): boolean | undefined {
   const today = new Date();
 
