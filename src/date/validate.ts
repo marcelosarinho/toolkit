@@ -39,9 +39,5 @@ export function isPast(date: Date): boolean {
 }
 
 export function isFuture(date: Date): boolean {
-  if (date > new Date()) {
-    return true;
-  }
-
-  return false;
+  return date > new Date();
 }
