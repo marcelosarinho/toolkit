@@ -29,6 +29,12 @@ export function isToday(date: Date): boolean | undefined {
       && date.getUTCDate() === today.getUTCDate());
 }
 
+export function isSameDay(date1: Date, date2: Date) {
+  return (date1.getUTCFullYear() === date2.getUTCFullYear()
+      && date1.getUTCMonth() === date2.getUTCMonth()
+      && date1.getUTCDate() === date2.getUTCDate());
+}
+
 export function isPast(date: Date): boolean {
   return date < new Date();
 }

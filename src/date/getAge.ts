@@ -1,5 +1,5 @@
 import * as C from "./constants";
-import { isToday, isValidDate } from "./validate";
+import { isValidDate } from "./validate";
 
 /**
  * Calculates the age based on the given birthdate
