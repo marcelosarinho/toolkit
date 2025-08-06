@@ -33,7 +33,7 @@ export function isLessThanOne(number: number): boolean {
  * @returns {boolean} Returns `true` if the date is a weekend, otherwise `false`.
  */
 export function isWeekend(date: Date): boolean {
-  return (date.getDay() === 0 || date.getDay() === 6);
+  return (date.getUTCDay() === 0 || date.getUTCDay() === 6);
 }
 
 /**
@@ -42,7 +42,7 @@ export function isWeekend(date: Date): boolean {
  * @returns {boolean} Returns `true` if the date is a weekday, otherwise `false`.
  */
 export function isWeekday(date: Date): boolean {
-  return (date.getDay() !== 0 && date.getDay() !== 6);
+  return (date.getUTCDay() !== 0 && date.getUTCDay() !== 6);
 }
 
 /**
