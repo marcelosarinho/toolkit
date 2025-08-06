@@ -24,14 +24,9 @@ export function isWeekday(date: Date): boolean {
 export function isToday(date: Date): boolean | undefined {
   const today = new Date();
 
-  if (date.getUTCFullYear() === today.getUTCFullYear()
+  return (date.getUTCFullYear() === today.getUTCFullYear()
       && date.getUTCMonth() === today.getUTCMonth()
-      && date.getUTCDate() === today.getUTCDate())
-    {
-      return true;
-  }
-
-  return false;
+      && date.getUTCDate() === today.getUTCDate());
 }
 
 export function isPast(date: Date): boolean {
