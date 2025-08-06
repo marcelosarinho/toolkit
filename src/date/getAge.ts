@@ -11,4 +11,17 @@ export default function getAge(birthdate: Date): number | undefined {
     console.log(C.INVALID_DATE_STRING_MESSAGE);
     return;
   }
+
+  if (birthdate.getTime() > new Date().getTime()) {
+    console.log("The birthdate cannot be greater than today's date!")
+    return;
+  }
+
+  const birthdateInMs = birthdate.getTime();
+  const result = new Date().getTime() - birthdateInMs;
+  const resultDate = new Date(result);
+
+  console.log(resultDate);
+
+  return resultDate.getFullYear() - 1970;
 }
