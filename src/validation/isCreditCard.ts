@@ -14,12 +14,16 @@
  * isCreditCard("abcd efgh ijkl mnop");   // false
  */
 export default function isCreditCard(value: string): boolean {
+  if (!value) {
+    return false;
+  }
+
   const digits = value.replace(/\D/g, '');
   let sum = 0;
   const length = digits.length;
   const parity = length % 2;
 
-  if (length < 16) {
+  if (length < 16 || length > 16) {
     return false;
   }
 
