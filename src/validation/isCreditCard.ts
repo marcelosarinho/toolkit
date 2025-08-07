@@ -19,7 +19,7 @@ export default function isCreditCard(value: string): boolean {
   const length = digits.length;
   const parity = length % 2;
 
-  if (length === 0) {
+  if (length < 16) {
     return false;
   }
 
