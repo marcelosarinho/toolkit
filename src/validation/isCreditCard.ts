@@ -36,9 +36,3 @@ export default function isCreditCard(value: string): boolean {
 
   return sum % 10 === 0;
 }
-
-console.log(isCreditCard("4111 1111 1111 1111")); // true
-console.log(isCreditCard("5500-0000-0000-0004")); // true
-console.log(isCreditCard("1234 5678 9012 3456")); // false
-console.log(isCreditCard("abcd efgh ijkl mnop")); // false
-console.log(isCreditCard("4242424242424242")); // true
