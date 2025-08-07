@@ -8,27 +8,13 @@ export const SPECIAL_CHARS_REGEX = /[!@#$%^&*()\-\_=+\[\]{}|;:'",.<>?\/`~]/g;
 export const CONSECUTIVE_CHARS_REGEX = /(.)\1+/gi;
 export const HEX_COLOR_REGEX = /^#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
 export const SLUG_REGEX = /^[0-9a-z]+(?:-[0-9a-z]+)*$/;
+export const FILE_REGEX = /[a-z]+$/i;
 
 export const COMMON_PASSWORDS = [
-  '123456',
-  '123456789',
-  '12345678',
-  'password',
-  'qwerty123',
-  'qwerty1',
-  '111111',
-  '12345',
-  'secret',
-  '123123',
-  '1234567890',
-  '1234567',
-  '000000',
-  'qwerty',
-  'abc123',
-  'password1',
-  'iloveyou',
-  '11111111',
-  'dragon',
+  '123456', '123456789', '12345678', 'password',
+  'qwerty123', 'qwerty1', '111111', '12345', 'secret',
+  '123123', '1234567890', '1234567', '000000', 'qwerty',
+  'abc123', 'password1', 'iloveyou', '11111111', 'dragon',
   'monkey',
 ];
 
