@@ -1,0 +1,9 @@
+export default function isJSONString(value: string) {
+  try {
+    JSON.parse(value);
+
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
