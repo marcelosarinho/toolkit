@@ -5,4 +5,27 @@ export const UPPERCASE_LETTERS_REGEX = /[A-Z]/g;
 export const LOWERCASE_LETTERS_REGEX = /[a-z]/g;
 export const DIGITS_REGEX = /[0-9]/g;
 export const SPECIAL_CHARS_REGEX = /[!@#$%^&*()\-\_=+\[\]{}|;:'",.<>?\/`~]/g;
-export const CONSECUTIVE_CHARS_REGEX = /(.)\1+/g;
+export const CONSECUTIVE_CHARS_REGEX = /(.)\1+/gi;
+
+export const COMMON_PASSWORDS = [
+  '123456',
+  '123456789',
+  '12345678',
+  'password',
+  'qwerty123',
+  'qwerty1',
+  '111111',
+  '12345',
+  'secret',
+  '123123',
+  '1234567890',
+  '1234567',
+  '000000',
+  'qwerty',
+  'abc123',
+  'password1',
+  'iloveyou',
+  '11111111',
+  'dragon',
+  'monkey',
+]
