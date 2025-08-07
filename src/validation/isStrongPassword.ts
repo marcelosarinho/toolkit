@@ -1,3 +1,5 @@
+import * as C from "./constants";
+
 type PasswordRules = {
   minLength: number,
   maxLength: number,
@@ -22,8 +24,14 @@ export default function isStrongPassword(password: string, options: PasswordRule
     return false;
   }
 
-  if () {
-    
+  if ((password.match(C.UPPERCASE_LETTERS_REGEX)?.length ?? 0) < options.uppercase) {
+    console.log("The password's number of uppercased letters is less than the minimum!");
+    return false;
+  }
+
+  if ((password.match(C.LOWERCASE_LETTERS_REGEX)?.length ?? 0) < options.lowercase) {
+    console.log("The password's number of lowercased letters is less than the minimum!");
+    return false;
   }
 }
 

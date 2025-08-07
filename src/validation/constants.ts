@@ -3,3 +3,5 @@ export const COMPLEX_EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s
 export const UUID_V4_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export const UPPERCASE_LETTERS_REGEX = /[A-Z]/g;
 export const LOWERCASE_LETTERS_REGEX = /[a-z]/g;
+export const DIGITS_REGEX = /[0-9]/g;
+export const SPECIAL_CHARS_REGEX = /[!@#$%^&*()\-\_=+\[\]{}|;:'",.<>?\/`~]/g;
