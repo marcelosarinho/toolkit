@@ -33,6 +33,16 @@ export default function isStrongPassword(password: string, options: PasswordRule
     console.log("The password's number of lowercased letters is less than the minimum!");
     return false;
   }
+
+  if ((password.match(C.DIGITS_REGEX)?.length ?? 0) < options.digits) {
+    console.log("The password's number of digits is less than the minimum!");
+    return false;
+  }
+
+  if ((password.match(C.SPECIAL_CHARS_REGEX)?.length ?? 0) < options.specialChars) {
+    console.log("The password's number of special characters is less than the minimum!");
+    return false;
+  }
 }
 
 isStrongPassword('oi', {

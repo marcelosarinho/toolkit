@@ -5,3 +5,4 @@ export const UPPERCASE_LETTERS_REGEX = /[A-Z]/g;
 export const LOWERCASE_LETTERS_REGEX = /[a-z]/g;
 export const DIGITS_REGEX = /[0-9]/g;
 export const SPECIAL_CHARS_REGEX = /[!@#$%^&*()\-\_=+\[\]{}|;:'",.<>?\/`~]/g;
+export const CONSECUTIVE_CHARS_REGEX = /(.)\1+/g;
