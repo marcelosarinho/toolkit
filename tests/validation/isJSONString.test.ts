@@ -29,7 +29,6 @@ describe("isJSONString", () => {
     expect(isJSONString('{"message": "Hello, world!}')).toBe(false);
     expect(isJSONString('{"item1": 1, "item2": 2,}')).toBe(false);
     expect(isJSONString('["apple", "banana",]')).toBe(false);
-    expect(isJSONString('{"path": "C:\Users\Documents"}')).toBe(false);
     expect(isJSONString('{"quote": "He said "Hello!""}')).toBe(false);
     expect(isJSONString('{"price": $10.00}')).toBe(false);
     expect(isJSONString('{"active": true, "status": False}')).toBe(false);
@@ -71,8 +70,8 @@ describe("isJSONString", () => {
   });
 
   it("should return true for JSON strings with unicode and escaped characters", () => {
-    expect(isJSONString('{"text": "Olá, mundo! \\u00A9"}')).toBe(false);
-    expect(isJSONString('{"path": "C:\\\\Users\\\\Documents"}')).toBe(false);
+    expect(isJSONString('{"text": "Olá, mundo! \\u00A9"}')).toBe(true);
+    expect(isJSONString('{"path": "C:\\\\Users\\\\Documents"}')).toBe(true);
   });
 
   it("should return true for JSON with numbers in different formats", () => {

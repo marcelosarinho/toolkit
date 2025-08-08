@@ -4,6 +4,10 @@
  * @returns {boolean} Returns `true` if the string is a valid JSON, or `false` if it isn't
  */
 export default function isJSONString(value: string): boolean {
+  if (!value || typeof value !== "string") {
+    return false;
+  }
+
   try {
     JSON.parse(value);
     return true;
