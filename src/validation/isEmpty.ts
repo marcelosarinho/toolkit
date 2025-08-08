@@ -25,6 +25,18 @@
  * isEmpty(123);       // false
  */
 export default function isEmpty(value: any): boolean {
+  if (typeof value === "bigint") {
+    return false;
+  }
+
+  if (Array.isArray(value)) {
+    return value.length === 0;
+  }
+
+  if (typeof value === "object" && value !== null && value !== undefined) {
+    return Object.keys(value).length === 0;
+  }
+
   if (!value) {
     return true;
   }

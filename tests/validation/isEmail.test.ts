@@ -70,4 +70,4 @@ describe("isEmail", () => {
     expect(isEmail("user.user@example.com", { complex: true })).toBe(true);
     expect(isEmail("user_123@example.org.br", { complex: true })).toBe(true);
   });
-})
+});

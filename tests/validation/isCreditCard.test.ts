@@ -56,4 +56,4 @@ describe("isCreditCard", () => {
     expect(isCreditCard("4000056655665556")).toBe(true);
     expect(isCreditCard("4000 0566 5566 5556")).toBe(true);
   });
-})
+});
