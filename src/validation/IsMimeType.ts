@@ -9,11 +9,11 @@ import * as C from "./constants";
  * The function checks if the given value exists in a predefined list of valid MIME types.
  *
  * @example
- * isMimeType("application/json");       // true
- * isMimeType("text/html");              // true
- * isMimeType("image/unknown");          // false
- * isMimeType("not/a-mime-type");        // false
+ * isMIMEType("application/json");       // true
+ * isMIMEType("text/html");              // true
+ * isMIMEType("image/unknown");          // false
+ * isMIMEType("not/a-mime-type");        // false
  */
-export default function isMimeType(value: string): boolean {
+export default function isMIMEType(value: string): boolean {
   return C.MIME_TYPES.includes(value);
 }

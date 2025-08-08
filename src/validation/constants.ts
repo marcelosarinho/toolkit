@@ -83,5 +83,4 @@ export const MIME_TYPES = [
   "message/global",
   "haptics/metadata",
   "haptics/stream",
-  "example/example"
 ];
