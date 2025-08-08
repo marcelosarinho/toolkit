@@ -14,5 +14,9 @@
  * isInRange(11, 1, 10);   // false
  */
 export default function isInRange(value: number, min: number, max: number): boolean {
+  if (typeof value !== "number" || typeof min !== "number" || typeof max !== "number") {
+    return false;
+  }
+
   return value >= min && value <= max;
 }
