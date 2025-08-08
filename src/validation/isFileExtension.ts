@@ -31,13 +31,18 @@ export default function isFileExtension(
   value: string,
   allowed: CommonFileExtension[]
 ): boolean {
+  if (!value || typeof value !== "string") {
+    return false;
+  }
+
   const match = value.match(C.FILE_REGEX);
 
   if (!match) {
     return false;
   }
 
-  const extension = match[0].toLowerCase() as CommonFileExtension;
+  const extensionWithoutDot = match[0].replace('.', '');
+  const extension = extensionWithoutDot.toLowerCase() as CommonFileExtension;
 
   return allowed.includes(extension);
 }
