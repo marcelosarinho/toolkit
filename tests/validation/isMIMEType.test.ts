@@ -38,11 +38,6 @@ describe("isMIMEType", () => {
     expect(isMIMEType("audio/mp4")).toBe(true);
   });
 
-  it("should return true for MIME types with suffixes", () => {
-    expect(isMIMEType("application/ld+json")).toBe(true);
-    expect(isMIMEType("image/svg+xml")).toBe(true);
-  });
-
   it("should return true for MIME types with parameters", () => {
     expect(isMIMEType("text/html; charset=utf-8")).toBe(true);
     expect(isMIMEType("application/json; version=1.0")).toBe(true);

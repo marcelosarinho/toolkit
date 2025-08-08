@@ -15,5 +15,11 @@ import * as C from "./constants";
  * isMIMEType("not/a-mime-type");        // false
  */
 export default function isMIMEType(value: string): boolean {
-  return C.MIME_TYPES.includes(value);
+  if (!value || typeof value !== "string") {
+    return false;
+  }
+
+  const [baseValue] = value.split(';').map((s) => s.trim());
+
+  return C.MIME_TYPES.has(baseValue.toLowerCase());
 }
