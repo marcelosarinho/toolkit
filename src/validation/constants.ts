@@ -7,6 +7,7 @@ export const DIGITS_REGEX = /[0-9]/g;
 export const SPECIAL_CHARS_REGEX = /[!@#$%^&*()\-\_=+\[\]{}|;:'",.<>?\/`~]/g;
 export const CONSECUTIVE_CHARS_REGEX = /(.)\1+/gi;
 export const HEX_COLOR_REGEX = /^#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
+export const MIME_TYPE_REGEX = /^[a-z0-9!#$&^_.+-]+\/[a-z0-9!#$&^_.+-]+(?:;[ \t]*[a-z0-9!#$&^_.+-]+=[a-z0-9!#$&^_.+-]+)*$/i;
 export const SLUG_REGEX = /^[0-9a-z]+(?:-[0-9a-z]+)*$/;
 export const FILE_REGEX = /\.[a-z]+$/i;
 
