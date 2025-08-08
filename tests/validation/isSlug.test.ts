@@ -77,8 +77,8 @@ describe("isSlug", () => {
   });
 
   it("should be case-sensitive", () => {
-    expect("MY-SLUG").toBe(false);
-    expect("my-slug").toBe(true);
+    expect(isSlug("MY-SLUG")).toBe(false);
+    expect(isSlug("my-slug")).toBe(true);
   });
 
   it("should reject objects with toString returning a valid slug", () => {

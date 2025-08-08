@@ -17,5 +17,9 @@ import * as C from "./constants";
  * isSlug("Valid");               // false
  */
 export default function isSlug(value: string): boolean {
+  if (!value || typeof value !== 'string') {
+    return false;
+  }
+
   return C.SLUG_REGEX.test(value);
 }
